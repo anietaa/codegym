@@ -1,0 +1,64 @@
+package com.codegym.task.task05.task0513;
+
+/* 
+Let's put together a rectangle
+
+*/
+
+public class Rectangle {
+   int top = 8;
+   int left = 9;
+   int width=0;
+   int height=0;
+   public void initialize(int top){
+       this.top = 8;
+       this.left = 9;
+       this.width =left;
+       this.height = top;
+   }
+   public void initialize(int top,int left){
+     
+       this.left=4;
+       this.top=9;
+       this.width=left;
+       this.height=top;
+       
+   }
+   public void initiliaze(int top,int left){
+     
+       this.left=4;
+       this.top=9;
+       this.width=left;
+       this.height=top;
+       
+   }
+   public void initiliaze(int top,int left,int width){
+     
+       this.left=9;
+       this.top=8;
+       this.width=left;
+       this.height=width;
+       
+   }
+   public void initialize(int top,int left,int width){
+     
+       this.left=4;
+       this.top=9;
+       this.width=3;
+       this.height=width;
+       
+   }
+   public void initialize(int top,int left,int width,int height){
+     
+       this.left=14;
+       this.top=9;
+       this.width=3;
+       this.height=7;
+       
+   }
+   
+
+    public static void main(String[] args) {
+
+    }
+}
