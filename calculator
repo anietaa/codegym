@@ -1,0 +1,38 @@
+package com.codegym.task.task06.task0612;
+
+/* 
+Calculator
+
+*/
+
+public class Calculator {
+    public static int plus(int a, int b) {
+        int plus= a+b;
+        return plus;
+    }
+
+    public static int minus(int a, int b) {
+        int difference = a-b;
+         return difference;
+    }
+
+    public static int multiply(int a, int b) {
+      int product = a* b;
+      
+        return product;
+    }
+
+    public static double divide(int a, int b) {
+        double div = (double)a/ (double)b;
+        return div;
+    }
+
+    public static double percent(int a, int b) {
+       double per=((double)b / 100) * a;
+       return per;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
