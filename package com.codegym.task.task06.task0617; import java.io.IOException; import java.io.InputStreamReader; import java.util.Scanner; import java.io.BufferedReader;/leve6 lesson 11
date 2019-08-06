@@ -1,0 +1,29 @@
+package com.codegym.task.task06.task0617;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.io.BufferedReader;
+
+/* 
+Notepad for new ideas
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException{
+        printIdea(new Idea());
+    }
+
+    public static class Idea{
+        
+            String s = "Anita";
+            public String getDescription() throws IOException{
+             return s;
+             
+        }
+    }
+    static public void printIdea(Idea idea) throws IOException{
+        
+        System.out.println(idea.getDescription());
+    }
+}
