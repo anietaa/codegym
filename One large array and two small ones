@@ -1,0 +1,34 @@
+package com.codegym.task.task07.task0705;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+/* 
+One large array and two small ones
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+       int a[] = new int[20];
+        //int n = a.length;
+       int l[] = new int[10];
+       int s[] = new int[10];
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       for(int i =0;i<=19;i++){
+           a[i] = Integer.parseInt(br.readLine());  
+            }
+       
+           l = Arrays.copyOfRange(a, 0,10);
+       
+       
+           s= Arrays.copyOfRange(a, 10, 20);
+           
+           
+           for(int i:s)
+           System.out.println(i);
+       
+       
+}
+}
