@@ -1,0 +1,54 @@
+package com.codegym.task.task07.task0713;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.IOException;
+
+
+/* 
+Playing Javarella
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+         ArrayList<Integer> listM = new ArrayList<Integer>();
+        ArrayList<Integer> divThree = new ArrayList<Integer>();
+        ArrayList<Integer> divTwo = new ArrayList<Integer>();
+        ArrayList<Integer> other = new ArrayList<Integer>();
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+     for(int i=0;i<=19;i++){
+         
+         listM.add(Integer.parseInt(br.readLine()));
+         
+     }
+     for(int i=0;i<=19;i++){
+         if(listM.get(i) % 3 == 0){
+                divThree.add(listM.get(i));
+         }
+         if(listM.get(i) % 2 == 0){
+             divTwo.add(listM.get(i));
+         }
+         if(listM.get(i) % 3 != 0 && listM.get(i) % 2 != 0){
+             other.add(listM.get(i));
+         }
+
+     }
+        //printList(listM);
+        printList(divThree);
+        printList(divTwo);
+        printList(other);
+
+        
+        
+    }
+
+    public static void printList(List<Integer> listM)  {
+        for(int i = 0; i < listM.size(); i++) {
+            System.out.println(listM.get(i));
+        }
+    
+         }
+}
