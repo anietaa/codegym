@@ -1,0 +1,14 @@
+/*for (int i = 0; i < list.size(); i++)
+        {
+            list.get(i).length();
+
+            if (list.get(i).length() > list.get(i + 1).length()) {
+
+                System.out.println(i + 1);
+                break;
+            }
+            else if (i == 9 && list.get(i).length() < list.get(i - 1).length())
+            {
+                System.out.println(i);
+            }
+    }*/
