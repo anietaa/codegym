@@ -1,0 +1,94 @@
+1. Create a Human class with String name, boolean sex, int age, and ArrayList<Human> children fields.
+2. Create and populate objects so that we end up with: two grandfathers, two grandmothers, one father, one mother, and three children.
+3. Display all the Human objects (Hint: use the Human class's toString() method).
+
+Requirements:
+•	The program should display text on the screen.
+•	The Human class must have four fields.
+•	The Human class must have one method.
+•	The Solution class must have one method.
+•	The program should create objects and fill them with data to get two grandfathers, two grandmothers, one father, one mother, and three children. Then it should display all the Human objects on the screen.
+
+
+
+package com.codegym.task.task08.task0824;
+import java.util.ArrayList;
+import java.util.List;
+import java .lang.NullPointerException;
+
+/* 
+Make a family
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws NullPointerException {
+        
+        ArrayList<Human> c1 = new ArrayList<Human>();
+        ArrayList<Human> c2 = new ArrayList<Human>();
+        ArrayList<Human> c3 = new ArrayList<Human>();
+         ArrayList<Human> c4 = new ArrayList<Human>();
+         
+        Human grandpa1 = new Human("Grandpa1",true,45,c2);
+        Human grandpa2 = new Human("Grandpa2",true,85,c1);
+        Human grandma1 = new Human("Grandma1",false,85,c2);
+        Human grandma2 = new Human("Grandma2",false,35,c1);
+        Human father = new Human("Father",true,25,c4);
+        c2.add(father);
+       // c1.add(father);
+        Human mother = new Human("Mother",false,25,c4);
+        c1.add(mother);
+        Human child1 = new Human("Child1",false,5,c3);
+        c4.add(child1);
+        Human child2 = new Human("Child2",false,5,c3);
+        c4.add(child2);
+        Human child3 = new Human("Child3",false,5,c3);
+        c4.add(child3);
+        
+
+        System.out.println(grandpa1.toString());
+        System.out.println(grandpa2.toString());
+        System.out.println(grandma1.toString());
+        System.out.println(grandma2.toString());
+        System.out.println(father.toString());
+        System.out.println(mother.toString());
+        
+       System.out.println(child1.toString());
+        System.out.println(child2.toString());
+       System.out.println(child3.toString());
+  
+    }
+
+    public static class Human {
+        String name;
+        boolean sex;
+        int age;
+        ArrayList<Human> children= new ArrayList<>();
+        
+        public Human(String name,Boolean sex,int age,ArrayList<Human> children){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.children = children;
+        }
+
+        public String toString() {
+            String text = "";
+            text += "Name: " + this.name;
+            text += ", sex: " + (this.sex ? "male" : "female");
+            text += ", age: " + this.age;
+
+            int childCount = this.children.size();
+            if (childCount > 0) {
+                text += ", children: " + this.children.get(0).name;
+
+                for (int i = 1; i < childCount; i++) {
+                    Human child = this.children.get(i);
+                    text += ", " + child.name;
+                }
+            }
+            return text;
+        }
+    }
+
+}
