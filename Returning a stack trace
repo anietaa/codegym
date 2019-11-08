@@ -1,0 +1,57 @@
+Write five methods that call each other.
+Each method must return its stack trace.
+
+Requirements:
+•	There should be 5 methods in the class (in addition to the main method).
+•	Each method should call the next: main calls method1, method1 calls method2, etc.
+•	Each method must return its stack trace.
+•	To get a stack trace, use Thread.currentThread().getStackTrace().
+
+
+
+
+
+/* 
+Returning a stack trace
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        method1();
+        
+    }
+
+    public static StackTraceElement[] method1() {
+        method2();
+        //write your code here
+         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+       return stackTraceElement; 
+    }
+
+    public static StackTraceElement[] method2() {
+        method3();
+         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+       return stackTraceElement;
+       //write your code here
+    }
+
+    public static StackTraceElement[] method3() {
+        method4();
+         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+       return stackTraceElement;
+       //write your code here
+    }
+
+    public static StackTraceElement[] method4() {
+        method5();
+         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
+        //write your code here
+    }
+
+    public static StackTraceElement[] method5() {
+         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+         return stackTraceElement;
+    }
+}
