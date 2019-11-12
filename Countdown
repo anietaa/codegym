@@ -1,0 +1,36 @@
+Use a loop to write a countdown from 10 to 0. To create a delay, use Thread.sleep(100);
+Wrap the sleep call in a try-catch block.
+
+Requirements:
+•	The program should display a countdown from 10 to 0.
+•	The program should display a new number every 100 milliseconds.
+•	The program should use "Thread.sleep(100);".
+•	The main method must have a try-catch block.
+•	The main method should not throw exceptions.
+  
+Method in a try-catch
+
+
+
+
+
+package com.codegym.task.task09.task0920;
+
+/* 
+Countdown
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        for (int i = 10; i >= 0; i--) {
+            System.out.println(i);
+
+           try {
+    Thread.sleep(100);
+} catch (InterruptedException ie) {
+    Thread.currentThread().interrupt();
+}
+        }
+    }
+}
