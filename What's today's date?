@@ -1,0 +1,41 @@
+Enter a date in the format "2013-08-18"
+Display this date in the format "AUG 18, 2013".
+Use a Date object and SimpleDateFormat.
+
+Requirements:
+The program must read data from the keyboard.
+A SimpleDateFormat variable must be declared in the program.
+A Date variable must be declared in the program.
+The program should display data on the screen.
+The output must match the task conditions.
+
+
+
+package com.codegym.task.task09.task0922;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+/* 
+What's today's date?
+
+*/
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception {
+       
+        BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
+        String date =reader.readLine();
+        SimpleDateFormat DateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date Converteddate =DateFormat.parse(date);
+        DateFormat = new SimpleDateFormat("MMM dd, YYYY");
+        System.out.println(DateFormat.format(Converteddate).toUpperCase());
+      
+
+
+    }
+}
