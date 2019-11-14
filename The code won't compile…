@@ -1,0 +1,53 @@
+Task: The program reads in two file names. It copies the first file to the location specified by the second file name.
+
+Requirements:
+The program must read file names.
+Don't change the getInputStream method.
+Don't change the getOutputStream method.
+The program must copy the contents of the first file to the second one.
+The program should display the number of copied bytes.
+The main method should call the getInputStream method.
+The main method should call the getOutputStream method.
+
+
+package com.codegym.task.task09.task0928;
+
+import java.io.*;
+
+/* 
+The code won't compile…
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String sourceFileName = reader.readLine();
+        String destinationFileName = reader.readLine();
+
+        InputStream fileInputStream = getInputStream(sourceFileName);
+        OutputStream fileOutputStream = getOutputStream(destinationFileName);
+
+        int count = 0;
+        while (fileInputStream.available() > 0) 
+        {
+            int data = fileInputStream.read();
+            fileOutputStream.write(data);
+            count++;
+        }
+
+        System.out.println("Bytes copied: " + count);
+
+        fileInputStream.close();
+        fileOutputStream.close();
+    }
+
+    public static InputStream getInputStream(String fileName) throws IOException {
+        return new FileInputStream(fileName);
+    }
+
+    public static OutputStream getOutputStream(String fileName) throws IOException {
+        return new FileOutputStream(fileName);
+    }
+}
