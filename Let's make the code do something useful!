@@ -1,0 +1,61 @@
+Requirements:
+•	The program must read file names.
+•	The main method must handle exceptions thrown by the getInputStream method. If an exception occurs, you should display "File does not exist.".
+•	The program must copy the contents of the first file to the second one.
+•	The main method should call the getInputStream method.
+•	Don't change the getInputStream method.
+•	The main method should call the getOutputStream method.
+•	Don't change the getOutputStream method.
+
+
+
+
+package com.codegym.task.task09.task0929;
+
+import java.io.*;
+
+/* 
+Let's make the code do something useful!
+
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+       String sourceFileName = reader.readLine();
+	
+		InputStream fileInputStream = null;
+		int repeatcount = 1;
+		while (repeatcount >= 0) {
+			try {
+				if (repeatcount == 0) sourceFileName = reader.readLine();
+				fileInputStream = getInputStream(sourceFileName);
+				repeatcount = -1;
+			} catch (Exception e) {
+				System.out.println("File does not exist.");
+				repeatcount--;
+			}
+		}
+        	String destinationFileName = reader.readLine();
+		OutputStream fileOutputStream = getOutputStream(destinationFileName);
+
+		while (fileInputStream.available() > 0) {
+			int data = fileInputStream.read();
+			fileOutputStream.write(data);
+		}
+
+		fileInputStream.close();
+		fileOutputStream.close();
+
+    }
+
+    public static InputStream getInputStream(String fileName) throws IOException {
+        return new FileInputStream(fileName);
+    }
+
+    public static OutputStream getOutputStream(String fileName) throws IOException {
+        return new FileOutputStream(fileName);
+    }
+}
+
